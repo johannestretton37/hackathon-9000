@@ -9,3 +9,7 @@ Inspired by HAL 9000 of course
 - Click anywhere on the screen
 - Allow access to microphone
 - Speak
+
+### Try it out
+
+[Hackathon 9000](https://johannestretton37.github.io/hackathon-9000)
