@@ -1,0 +1,82 @@
+@property --outer-yellow-pos {
+  syntax: "<percentage>";
+  initial-value: 1%;
+  inherits: false;
+}
+@property --inner-red-pos {
+  syntax: "<percentage>";
+  initial-value: 5%;
+  inherits: false;
+}
+@property --outer-red-pos {
+  syntax: "<percentage>";
+  initial-value: 8%;
+  inherits: false;
+}
+@property --inner-black-pos {
+  syntax: "<percentage>";
+  initial-value: 30%;
+  inherits: false;
+}
+
+:root {
+  --duration: 200ms;
+}
+html {
+  background-color: #000;
+}
+body {
+  height: 100%;
+  background-color: #000;
+  background-image: linear-gradient(0deg, #000, #110f24);
+}
+
+#sky {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  filter: blur(1px);
+}
+
+.center {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#hal {
+  display: block;
+  width: 50vw;
+  aspect-ratio: 1/1;
+  background-image: radial-gradient(
+    closest-side,
+    rgb(255, 255, 67) 0%,
+    yellow var(--outer-yellow-pos, 1%),
+    red var(--inner-red-pos, 3%),
+    rgb(175, 5, 5) var(--outer-red-pos, 20%),
+    black var(--inner-black-pos, 50%),
+    black 90%,
+    #999 91%,
+    #eee 97%,
+    #777 98%,
+    #222 100%
+  );
+  border-radius: 25vw;
+  transition: --outer-yellow-pos var(--duration, 100ms) ease-out,
+    --inner-red-pos var(--duration, 100ms) ease-out,
+    --outer-red-pos var(--duration, 100ms) ease-out,
+    --inner-black-pos var(--duration, 100ms) ease-out;
+}
